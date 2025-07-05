@@ -1,0 +1,45 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+transformers:
+  - ./transformer.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+  immutable: true
+
+secretGenerator:
+  - name: ssh-secrets
+    literals:
+      - foo=bar
+      - ssh-key=""
+      - ssh-key.pub=""
+    options:
+      annotations:
+        local.config.zprd/passwords: |-
+          - type: ssh
+            publicKey: ssh-key.pub
+            privateKey: ssh-key
+
+  - name: uuid-random
+    literals:
+      - API_KEY=""
+      - USER_ID=""
+      - USER_SECRET=""
+    options:
+      annotations:
+        local.config.zprd/passwords: |-
+          - name: API_KEY
+            type: random
+          - name: USER_SECRET
+            type: random
+          - name: USER_ID
+            type: uuid
+
+  - name: default-is-random
+    literals:
+      - USER_PASSWORD=""
+    options:
+      annotations:
+        local.config.zprd/passwords: |-
+          - name: USER_PASSWORD

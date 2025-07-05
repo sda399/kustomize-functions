@@ -12,6 +12,9 @@
 !LICENSE
 
 !Makefile
+!*.json
+!*.yaml
+!*.md
 
 # ...even if they are in subdirectories
 !*/

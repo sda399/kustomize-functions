@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: RandomReplacer
+metadata:
+  name: randomReplacer
+  annotations:
+    config.kubernetes.io/function: |-
+      container:
+        image: ghcr.io/zprd/kustomize-functions/password-generator:v1.0.0

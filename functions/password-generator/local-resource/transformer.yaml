@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: RandomReplacer
+metadata:
+  name: randomReplacer
+  annotations:
+    config.kubernetes.io/function: |-
+      exec:
+        path: ./bin/password-generator

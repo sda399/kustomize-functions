@@ -4,8 +4,8 @@ This is a collection of KRM functions that can be used in Kustomize projects to 
 
 ## List of available functions
 
-* **[replacement extra](./replacement-extra/README.md)**: the kustomize builtin replacement with extra features: regex support
-* **[password generator](./password-generator/README.md)**: inject random data in your secrets: password, ssh key pair, uuid
+* **[replacement extra](./functions/replacement-extra/README.md)**: the kustomize builtin replacement with extra features: regex support
+* **[password generator](./functions/password-generator/README.md)**: inject random data in your secrets: password, ssh key pair, uuid
 
 ## Usage example
 
