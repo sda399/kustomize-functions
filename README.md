@@ -67,7 +67,7 @@ replacements:
 #### Build
 build when invoking a docker image:
 
-    kustomize build --enable-alpha-plugins --enable-exec ./
+    kustomize build --enable-alpha-plugins ./
 
 alternatively when using a executable file:
 
