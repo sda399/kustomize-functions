@@ -1,4 +1,2 @@
 build:
-	for i in functions/* ; do \
-	   	cd ./$$i && make build; \
-	done
+	find functions/ -type d -mindepth 1 -maxdepth 1 -exec sh -c 'cd {} && make build' \;
