@@ -32,5 +32,5 @@ metadata:
   annotations:
     config.kubernetes.io/function: |-
       container:
-        image: ghcr.io/zprd/kustomize-functions/password-generator:v1.0.0
+        image: ghcr.io/sda399/kustomize-functions/password-generator:v1.0.0
 ```

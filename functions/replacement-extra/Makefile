@@ -9,10 +9,11 @@ endif
 export PATH := $(MYGOBIN):$(PATH)
 
 NAME := replacement-extra
+VERSION := v1.0.0
 
 image: build
 	./local-resource/bin/$(NAME) gen ./
-	docker build -f ./Dockerfile -t ghcr.io/zprd/kustomize-functions/$(NAME):v1.0.0 image/
+	docker build -f ./Dockerfile -t ghcr.io/sda399/kustomize-functions/$(NAME):$(VERSION) image/
 
 
 build:
@@ -22,6 +23,11 @@ build:
 run: build
 	DEBUG=true \
 		kustomize build --enable-alpha-plugins --enable-exec --stack-trace ./local-resource
+
+run-image: build image
+	sed -iE "s#\(image: .*\):.*#\1:$(VERSION)#" ./local-resource/image/transformer.yaml
+	DEBUG=true \
+		kustomize build --enable-alpha-plugins --stack-trace ./local-resource/image
 
 test:
 	cd image && go test -v .
