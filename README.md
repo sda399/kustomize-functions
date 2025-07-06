@@ -9,7 +9,7 @@ This is a collection of KRM functions that can be used in Kustomize projects to 
 
 ## Usage example
 
-The following shows how to integrate replacement-extra ina kustomization file.
+The following shows how to integrate replacement-extra in a kustomization file.
 More examples are available in the Kustomize project repository
 
 ### kustomization.yaml
@@ -37,7 +37,7 @@ metadata:
   annotations:
     config.kubernetes.io/function: |-
       container:
-        image: ghcr.io/zprd/kustomize-functions/replacement-extra:v1.0.0
+        image: ghcr.io/sda399/kustomize-functions/replacement-extra:v1.0.0
 
 replacements:
 ...

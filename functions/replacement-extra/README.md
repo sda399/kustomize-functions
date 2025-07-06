@@ -1,11 +1,12 @@
 # Replacement extra
 
-This Function is a copy of the Kustomize `replacement` builtin transformer 
+This Function is a copy of the Kustomize `replacement` builtin transformer
 with the added support for regex expressions to select `targets`
 
 This makes it possible to select multiple resources within the same target block
 
 ## Example
+Add service namespace to an environment variable in Deployments, DaemonSet, StatefulSet, declared in kustomize resources
 
 ```yaml
 apiVersion: kustomize-functions.zprd.io/v1
@@ -16,7 +17,7 @@ metadata:
   annotations:
     config.kubernetes.io/function: |-
       container:
-        image: ghcr.io/zprd/kustomize-functions/replacement-extra:v1.0.0
+        image: ghcr.io/sda399/kustomize-functions/replacement-extra:v1.0.0
 
 replacements:
   - source:
